@@ -15,5 +15,13 @@ class TestGetPendingApplications(unittest.TestCase):
         self.assertEqual(result, ["12345"])
         file.close()
 
+    def test_good_xml_no_match(self):
+        file = open('test/check_application_status_good_no_pending.xml', 'r')
+        file_xml = file.read()
+        result = approver.get_pending_applications(file_xml)
+        self.assertEqual(result, None)
+        file.close()
+
+
 if __name__ == '__main__':
     unittest.main()

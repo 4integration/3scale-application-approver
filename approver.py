@@ -149,7 +149,6 @@ if __name__ == '__main__':
         exit(0)
     else:
         for account in accounts:
-
             xml = get_application_xml(account, args.provider_key, args.api_endpoint)
             applications = get_pending_applications(xml)
 
